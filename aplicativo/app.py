@@ -7,7 +7,7 @@ st.title("Sistema de Consulta e Registro de Residência")
 # 1. Carregar base de dados
 # ============================================================
 
-CAMINHO_ARQUIVO = r"aplicativo\dados.ods"
+CAMINHO_ARQUIVO = r"dados.ods"
 
 st.subheader("Carregando dados...")
 
@@ -187,4 +187,5 @@ if pagina == "Registrar Atividade (Residente)":
             st.success("Atividade registrada com sucesso!")
         else:
             st.error("CRM e atividade são obrigatórios.")
+
 
