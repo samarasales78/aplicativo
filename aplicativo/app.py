@@ -4,16 +4,17 @@ import pandas as pd
 st.title("Sistema de Consulta e Registro de Residência")
 
 # ============================================================
-# 1. Carregar base de dados
+# 1. Carregar base de dados (XLSX)
 # ============================================================
 
-CAMINHO_ARQUIVO = "dados.ods"
+CAMINHO_ARQUIVO = "dados.xlsx"
 
 st.subheader("Carregando dados...")
 
 try:
-    df = pd.read_excel(CAMINHO_ARQUIVO, engine="odf")  
+    df = pd.read_excel(CAMINHO_ARQUIVO)   # XLSX não precisa de engine explícito
     st.success("Base de dados carregada com sucesso!")
+
 except Exception as e:
     st.error("Erro ao carregar o arquivo.")
     st.code(str(e))
@@ -187,6 +188,7 @@ if pagina == "Registrar Atividade (Residente)":
             st.success("Atividade registrada com sucesso!")
         else:
             st.error("CRM e atividade são obrigatórios.")
+
 
 
 
