@@ -7,7 +7,7 @@ st.title("Sistema de Consulta e Registro de Residência")
 # 1. Carregar base de dados (XLSX)
 # ============================================================
 
-CAMINHO_ARQUIVO = "dados.xlsx"
+CAMINHO_ARQUIVO = "aplicativo/dados.xlsx"
 
 st.subheader("Carregando dados...")
 
@@ -188,6 +188,7 @@ if pagina == "Registrar Atividade (Residente)":
             st.success("Atividade registrada com sucesso!")
         else:
             st.error("CRM e atividade são obrigatórios.")
+
 
 
 
