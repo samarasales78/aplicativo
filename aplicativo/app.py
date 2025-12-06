@@ -3,9 +3,7 @@ import pandas as pd
 
 st.title("Sistema de Consulta e Registro de Residência")
 
-# ============================================================
 # 1. Carregar base de dados (XLSX)
-# ============================================================
 
 CAMINHO_ARQUIVO = "aplicativo/dados.xlsx"
 
@@ -23,10 +21,7 @@ except Exception as e:
 # Normalizar colunas
 df.columns = df.columns.str.strip().str.lower()
 
-
-# ============================================================
 # 2. MENU LATERAL
-# ============================================================
 
 st.sidebar.title("Menu")
 pagina = st.sidebar.radio(
@@ -34,10 +29,7 @@ pagina = st.sidebar.radio(
     ["Consultar Dados", "Registrar Escala (Supervisor)", "Registrar Atividade (Residente)"]
 )
 
-
-# ============================================================
 # 3. CONSULTAR DADOS (Página 1)
-# ============================================================
 
 if pagina == "Consultar Dados":
 
@@ -112,10 +104,7 @@ if pagina == "Consultar Dados":
             "text/csv"
         )
 
-
-# ============================================================
 # 4. REGISTRAR ESCALA (Página 2)
-# ============================================================
 
 if pagina == "Registrar Escala (Supervisor)":
 
@@ -152,9 +141,7 @@ if pagina == "Registrar Escala (Supervisor)":
         else:
             st.error("CRM e Escala são obrigatórios.")
 
-# ============================================================
 # 5. REGISTRAR ATIVIDADE (Residente)
-# ============================================================
 
 if pagina == "Registrar Atividade (Residente)":
 
@@ -188,8 +175,3 @@ if pagina == "Registrar Atividade (Residente)":
             st.success("Atividade registrada com sucesso!")
         else:
             st.error("CRM e atividade são obrigatórios.")
-
-
-
-
-
